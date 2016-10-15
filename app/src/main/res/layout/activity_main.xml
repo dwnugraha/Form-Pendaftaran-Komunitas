@@ -38,14 +38,6 @@
         android:ems="10"
         android:id="@+id/editTextNama" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="No. Identitas"
-        android:ems="10"
-        android:id="@+id/editTextIdentitas" />
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -82,22 +74,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:hint="Tanggal Lahir"
-        android:id="@+id/editTextTL" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Alamat"
-        android:ems="10"
-        android:id="@+id/editTextAlamat" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
         android:hint="E-Mail"
@@ -121,7 +97,8 @@
             android:layout_width="242dp"
             android:layout_height="wrap_content"
             android:id="@+id/spinnerKerja"
-            android:layout_weight="0.77" />
+            android:layout_weight="0.77"
+            android:entries="@array/pekerjaan"/>
     </LinearLayout>
 
     <LinearLayout
@@ -167,6 +144,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonDaftar" />
+
+    <TextView
+        android:text="Silahkan Isi Data Diri Anda!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hasil" />
 
 </LinearLayout>
 </ScrollView>
