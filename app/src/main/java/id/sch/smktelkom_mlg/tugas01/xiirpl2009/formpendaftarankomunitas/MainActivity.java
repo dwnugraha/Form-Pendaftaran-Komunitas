@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     RadioButton rbLaki,rbPer;
-    EditText etNama,etIden,etTL,etAlamat,etMail;
+    EditText etNama,etAlamat;
     Spinner spKerja;
     Button btOK;
     TextView tvHasil;
@@ -23,10 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         etNama = (EditText) findViewById(R.id.editTextNama);
-        etIden = (EditText) findViewById(R.id.editTextIdentitas);
-        etTL   = (EditText) findViewById(R.id.editTextTL);
         etAlamat = (EditText) findViewById(R.id.editTextAlamat);
-        etMail = (EditText) findViewById(R.id.editTextMail);
         spKerja = (Spinner) findViewById(R.id.spinnerKerja);
         rbLaki = (RadioButton) findViewById(R.id.radioButtonLaki);
         rbPer = (RadioButton) findViewById(R.id.radioButtonPer);
@@ -48,23 +45,17 @@ public class MainActivity extends AppCompatActivity {
                     gender = rbPer.getText().toString();
                 }
 
-                String info = null;
-                int startlen = info.length();
-                if(cbMedsos.isChecked()) info = cbMedsos.getText().toString();
-                if(cbTeman.isChecked()) info = cbTeman.getText().toString();
-                if(cbMedmas.isChecked()) info = cbMedmas.getText().toString();
-                if(info.length()==startlen) info = "Tidak ada pada pilihan";
-
+                String info = "";
+                if(cbMedsos.isChecked()) info += cbMedsos.getText().toString() +"\n";
+                if(cbTeman.isChecked()) info += cbTeman.getText().toString() +"\n";
+                if(cbMedmas.isChecked()) info += cbMedmas.getText().toString() +"\n";
                 tvHasil.setText("Selamat Anda Telah Terdaftar!\n\n " +
                         "Berikut data diri anda:\n" +
-                        "Nama           :   " + etNama.getText() +"\n" +
-                        "No.Identitas   :   " + etIden.getText() + "\n" +
-                        "Gender         :   " + gender +"\n" +
-                        "Tanggal Lahir  :   " + etTL.getText() + "\n" +
-                        "Alamat         :   " + etAlamat.getText()+"\n" +
-                        "E-mail         :   " + etMail.getText()+"\n" +
-                        "Pekerjaan      :   " + spKerja.getSelectedItem().toString() +"\n" +
-                        "Mengenal CISC dari " + info +"\n" );
+                        "Nama              :   " + etNama.getText() +"\n" +
+                        "Gender            :   " + gender +"\n" +
+                        "Alamat            :   " + etAlamat.getText()+"\n" +
+                        "Pekerjaan         :   " + spKerja.getSelectedItem().toString() +"\n" +
+                        "Mengenal CISC dari: \n" + info );
             }
         });
     }
